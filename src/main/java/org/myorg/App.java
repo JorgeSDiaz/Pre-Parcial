@@ -38,6 +38,8 @@ public class App {
     }
 
     private static String getMathUrl() {
-        return System.getenv("MATHSERVER" + roundRobinService.getActualServer()) != null ? System.getenv("MATHSERVER" + roundRobinService.getActualServer()) : "http://localhost:4567/math/";
+        String server = String.valueOf(roundRobinService.getActualServer());
+        System.out.println(server);
+        return System.getenv("MATHSERVER" + server) != null ? System.getenv("MATHSERVER" + server) : "http://localhost:4567/math/";
     }
 }
