@@ -12,6 +12,7 @@ public class RoundRobinService {
     public int getActualServer() {
         int server = this.actualServer;
         this.actualServer = (this.actualServer + 1) % cantServers;
+        System.out.println(this.actualServer);
 
         return server + 1;
     }
