@@ -23,7 +23,9 @@ public class App {
             return Files.readAllBytes(Path.of("src/main/resources/static/index.html"));
         }));
         get("/json", ((request, response) -> {
-            return getResourceFromOut(getMathUrl() + request.queryParams("q"));
+            String url = getMathUrl() + request.queryParams("q");
+            System.out.println(url);
+            return getResourceFromOut(url);
         }));
     }
 
