@@ -32,10 +32,10 @@ public class App {
     }
 
     private static Integer getCantMathServers() {
-        return System.getenv("CANT-MATH-SERVERS") != null ? Integer.parseInt(System.getenv("CANT-MATH-SERVERS")) : 1;
+        return System.getenv("CANT-MATH-SERVERS") != null ? Integer.parseInt(System.getenv("CANTMATHSERVERS")) : 1;
     }
 
     private static String getMathUrl() {
-        return System.getenv("MATH-SERVER-" + roundRobinService.getActualServer()) != null ? System.getenv("MATH-SERVER-" + roundRobinService.getActualServer()) : "http://localhost:4567/math/";
+        return System.getenv("MATH-SERVER-" + roundRobinService.getActualServer()) != null ? System.getenv("MATHSERVER" + roundRobinService.getActualServer()) : "http://localhost:4567/math/";
     }
 }
